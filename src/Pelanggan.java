@@ -5,7 +5,7 @@ public class Pelanggan {
     public String alamat;
     public String no_telp;
     public String email;
-
+    // methode data pelanggan
     public void dataPelanggan(){
         Scanner input = new Scanner(System.in);
         System.out.println("----------------");
@@ -20,7 +20,7 @@ public class Pelanggan {
         System.out.print("Masukkan Email : ");
         email = input.nextLine();
     }
-
+    // tampil data pelanggan
     public void cetakData(){
         System.out.println("--------------------");
         System.out.println("--Daftar Pelanggan--");

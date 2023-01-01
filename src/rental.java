@@ -1,7 +1,6 @@
 import java.util.Scanner;
 public class rental {
     int hari;
-
     double mobil;
     String merk;
     //    konstructor overloading rental untuk mobil
@@ -12,7 +11,7 @@ public class rental {
         int byr=mobil*hari;
         System.out.println("Sewa perhari :"+byr);
     }
-
+    // menu pilihan
     public static void pilihan(){
         Scanner input = new Scanner(System.in);
         System.out.println("Silahkan pilih Kendaraan Jenis Kendaraan :");
@@ -34,7 +33,7 @@ public class rental {
                 break;
         }
     }
-    //    method roda 2 atau motor
+    // sedan
     public static void Sedan(){
         Scanner input = new Scanner(System.in);
         Pelanggan plgn1 = new Pelanggan();
@@ -68,7 +67,7 @@ public class rental {
                 break;
         }
     }
-    //    methode roda 4 atau mobil
+    // mpv
     public static void MPV(){
         Scanner input = new Scanner(System.in);
         Pelanggan plgn1 = new Pelanggan();
@@ -106,6 +105,7 @@ public class rental {
                 ertiga.tampilMPV();
         }
     }
+    // suv
     public static void SUV(){
         Scanner input = new Scanner(System.in);
         Pelanggan plgn1 = new Pelanggan();
@@ -134,7 +134,7 @@ public class rental {
                 break;
         }
     }
-
+    // output sedan
     void tampilSedan(){
         int jumlahhari;
         Scanner input = new Scanner(System.in);
@@ -144,6 +144,7 @@ public class rental {
         System.out.println("Anda memilih "+merk);
         System.out.println("Harga sewa : "+jumlahhari);
     }
+    // output mpv
     void tampilMPV(){
         int jumlahhari;
         Scanner input = new Scanner(System.in);
@@ -153,6 +154,7 @@ public class rental {
         System.out.println("Anda memilih "+merk);
         System.out.println("Harga sewa : "+jumlahhari);
     }
+    // output suv
     void tampilSUV(){
         int jumlahhari;
         Scanner input = new Scanner(System.in);

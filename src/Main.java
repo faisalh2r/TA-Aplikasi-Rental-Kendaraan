@@ -18,7 +18,7 @@ public class Main {
         System.out.print("Masukan password : ");
         my_password = br.readLine();
         System.out.println("=================================");
-
+        // pengkondisian
         if (my_user.equals(admin.getUsername()) && my_password.equals(admin.getPassword())) {
             System.out.println("=================================");
             System.out.println("      *** Login Sukses ***       ");

@@ -3,6 +3,7 @@ public class Login {
     public String password;
     public String nama;
 
+    // methode login
     public Login() {
         username = "faisal";
         password = "faisal";
