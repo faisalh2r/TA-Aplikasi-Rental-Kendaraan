@@ -1,5 +1,5 @@
 import java.util.Scanner;
-//
+
 public class Pelanggan {
     public String nama;
     public String alamat;
