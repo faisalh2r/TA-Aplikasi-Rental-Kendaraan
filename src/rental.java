@@ -1,4 +1,9 @@
+import java.util.Calendar;
 import java.util.Scanner;
+import java.text.SimpleDateFormat;
+
+import static java.lang.System.exit;
+
 public class rental {
     int hari;
     double mobil;
@@ -12,31 +17,45 @@ public class rental {
         System.out.println("Sewa perhari :"+byr);
     }
     // menu pilihan
-    public static void pilihan(){
-        Scanner input = new Scanner(System.in);
-        System.out.println("Silahkan pilih Kendaraan Jenis Kendaraan :");
-        System.out.println("1. Sedan ");
-        System.out.println("2. MPV ");
-        System.out.println("3. SUV");
-        System.out.println("*Tekan apa saja untuk keluar");
-        System.out.print("Masukkan pilihan : ");
-        int pilih = input.nextInt();
-        switch(pilih) {
-            case 1 :
-                Sedan();
-                break;
-            case 2 :
-                MPV();
-                break;
-            case 3 :
-                SUV();
-                break;
+    // exception jika salah menginput tipe data
+    public static void pilihan() {
+        int pilih;
+        try{
+            do {
+                Scanner input = new Scanner(System.in);
+                System.out.println();
+                System.out.println("Silahkan pilih Kendaraan Jenis Kendaraan :");
+                System.out.println("1. Sedan ");
+                System.out.println("2. MPV ");
+                System.out.println("3. SUV ");
+                System.out.println("0. Keluar ");
+                System.out.print("Masukkan pilihan : ");
+                pilih = input.nextInt();
+                switch (pilih) {
+                    case 1:
+                        Sedan();
+                        break;
+                    case 2:
+                        MPV();
+                        break;
+                    case 3:
+                        SUV();
+                        break;
+                }
+            } while (pilih != 0);
+            System.out.println("Anda Keluar dari Program");
+            exit(1);
+        } catch (Exception e) {
+            System.out.println("Input data salah...");
+            pilihan();
         }
+
     }
     // sedan
     public static void Sedan(){
         Scanner input = new Scanner(System.in);
         Pelanggan plgn1 = new Pelanggan();
+        System.out.println();
         System.out.println("======================");
         System.out.println("------Pilih Mobil-----");
         System.out.println("======================");
@@ -46,7 +65,9 @@ public class rental {
         System.out.println("4.Hyundai Avega");
         System.out.print("Masukkan pilihan : ");
         int pilih1=input.nextInt();
+        System.out.println();
         plgn1.dataPelanggan();
+        System.out.println();
         plgn1.cetakData();
         switch(pilih1){
             case 1:
@@ -119,7 +140,7 @@ public class rental {
         int pilih3=input.nextInt();
         plgn1.dataPelanggan();
         plgn1.cetakData();
-        switch(pilih3){
+        switch (pilih3){
             case 1:
                 rental fortuner=new rental(400000,1,"Toyota Fortuner");
                 fortuner.tampilSUV();
@@ -143,6 +164,13 @@ public class rental {
         jumlahhari=(int) (jmhari*mobil*hari);
         System.out.println("Anda memilih "+merk);
         System.out.println("Harga sewa : "+jumlahhari);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar tgl = Calendar.getInstance();
+        System.out.println("Tanggal Pinjam \t\t : "+tgl.getTime());
+        tgl.add(Calendar.DATE, jmhari);
+        System.out.println("BATAS PENGEMBALIAN \t : "+sdf.format(tgl.getTime()));
+        System.out.println("Denda telat /hari \t: Rp.50000");
+        System.out.println("============= JANGAN TELAT YAAA =============");
     }
     // output mpv
     void tampilMPV(){
@@ -153,6 +181,13 @@ public class rental {
         jumlahhari=(int) (jmhari*mobil*hari);
         System.out.println("Anda memilih "+merk);
         System.out.println("Harga sewa : "+jumlahhari);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar tgl = Calendar.getInstance();
+        System.out.println("Tanggal Pinjam \t\t : "+tgl.getTime());
+        tgl.add(Calendar.DATE, jmhari);
+        System.out.println("BATAS PENGEMBALIAN \t : "+sdf.format(tgl.getTime()));
+        System.out.println("Denda telat /hari \t: Rp.70000");
+        System.out.println("============= JANGAN TELAT YAAA =============");
     }
     // output suv
     void tampilSUV(){
@@ -163,7 +198,12 @@ public class rental {
         jumlahhari=(int) (jmhari*mobil*hari);
         System.out.println("Anda memilih "+merk);
         System.out.println("Harga sewa : "+jumlahhari);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Calendar tgl = Calendar.getInstance();
+        System.out.println("Tanggal Pinjam \t\t : "+tgl.getTime());
+        tgl.add(Calendar.DATE, jmhari);
+        System.out.println("BATAS PENGEMBALIAN \t : "+sdf.format(tgl.getTime()));
+        System.out.println("Denda telat /hari \t: Rp.100000");
+        System.out.println("============= JANGAN TELAT YAAA =============");
     }
-
-
 }

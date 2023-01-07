@@ -8,8 +8,9 @@ public class Pelanggan {
     // methode data pelanggan
     public void dataPelanggan(){
         Scanner input = new Scanner(System.in);
+        System.out.println();
         System.out.println("----------------");
-        System.out.println("Menu Data Pelanggan ");
+        System.out.println("-Data Pelanggan-");
         System.out.println("----------------");
         System.out.print("Masukkan Nama : ");
         nama = input.nextLine();
@@ -22,6 +23,7 @@ public class Pelanggan {
     }
     // tampil data pelanggan
     public void cetakData(){
+        System.out.println();
         System.out.println("--------------------");
         System.out.println("--Daftar Pelanggan--");
         System.out.println("--------------------");
@@ -29,6 +31,5 @@ public class Pelanggan {
         System.out.println("Alamat : "+alamat);
         System.out.println("No.telp : "+no_telp);
         System.out.println("Email :  "+email);
-
     }
 }

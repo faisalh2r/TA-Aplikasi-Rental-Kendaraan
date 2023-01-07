@@ -9,6 +9,7 @@ public class Login {
         password = "faisal";
         nama = "Faisal Habibie";
     }
+    // getter
     public String getUsername() {
         return username;
     }
